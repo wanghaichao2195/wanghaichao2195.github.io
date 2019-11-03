@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>leetcode 5 - Longest Palindromic Substring</title>
+      <link href="/11/03/2019/5/"/>
+      <url>/11/03/2019/5/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> lo, maxLen;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//time n^2 space n^2</span></span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[n][n];</span><br><span class="line">        String res = <span class="string">""</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n - <span class="number">1</span>; j++) &#123; <span class="comment">//expand, not contract</span></span><br><span class="line">                dp[i][j] = s.charAt(i) == s.charAt(j) &amp;&amp; (j - i &lt;= <span class="number">2</span> || dp[i + <span class="number">1</span>][j - <span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">if</span> (dp[i][j] &amp;&amp; (j - i + <span class="number">1</span> &gt; maxLen)) &#123;</span><br><span class="line">                    maxLen = j - i + <span class="number">1</span>;</span><br><span class="line">                    lo = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> s.substring(lo, lo + maxLen);</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//time n^2 space O(1)</span></span><br><span class="line"><span class="comment">//         int len = s.length();</span></span><br><span class="line"><span class="comment">//     if (len &lt; 2)</span></span><br><span class="line"><span class="comment">// return s;</span></span><br><span class="line"><span class="comment">//         for (int i = 0; i &lt; len; i++) &#123;</span></span><br><span class="line"><span class="comment">//             extend(s, i, i + 1);//even</span></span><br><span class="line"><span class="comment">//             extend(s, i, i);//odd</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         return s.substring(lo, lo + maxLen);</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//     public void extend (String s, int j, int k) &#123;</span></span><br><span class="line"><span class="comment">//         while (j &gt;= 0 &amp;&amp; k &lt; s.length() &amp;&amp; s.charAt(j) == s.charAt(k)) &#123;</span></span><br><span class="line"><span class="comment">//             j--;</span></span><br><span class="line"><span class="comment">//             k++;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         //after valid one, the j and k will be one more than it should be, so we use k-j-1 rather than k-j+1</span></span><br><span class="line"><span class="comment">//         if (maxLen &lt; k - j - 1) &#123;</span></span><br><span class="line"><span class="comment">//             lo = j + 1;</span></span><br><span class="line"><span class="comment">//        maxLen = k - j - 1;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode dp 2-pointer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 518 - Coin Change 2</title>
+      <link href="/11/02/2019/518/"/>
+      <url>/11/02/2019/518/</url>
+      
+        <content type="html"><![CDATA[<p>Use DP to solve this problem and use rolling arr to optimize the space in to O(amount).</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> amount, <span class="keyword">int</span>[] coins)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//time amount * n, space amount * n</span></span><br><span class="line">        <span class="comment">// int[][] dp = new int[coins.length+1][amount+1];</span></span><br><span class="line">        <span class="comment">//这里是指amount是0的话总至少有一种方法就是不用任何硬币？</span></span><br><span class="line">        <span class="comment">// dp[0][0] = 1;</span></span><br><span class="line">        <span class="comment">// //i means how many coins </span></span><br><span class="line">        <span class="comment">// dp[0][j] = 0, so don't have to initialize</span></span><br><span class="line">        <span class="comment">// for (int i = 1; i &lt;= coins.length; i++) &#123;</span></span><br><span class="line">        <span class="comment">//     dp[i][0] = 1;</span></span><br><span class="line">        <span class="comment">//     for (int j = 1; j &lt;= amount; j++) &#123;</span></span><br><span class="line">        <span class="comment">//         dp[i - 1][j]不用这个硬币，到这个amount dp[i][j - coins[i - 1]]用这个硬币，到这个amount</span></span><br><span class="line">        <span class="comment">//         dp[i][j] = dp[i - 1][j] + (j &gt;= coins[i - 1] ? dp[i][j - coins[i - 1]]: 0); //i-1 prev row, i cur row</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// return dp[coins.length][amount];</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//time amount * n, space amount</span></span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[amount + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; coins.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= amount; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j &gt;= coins[i]) &#123;</span><br><span class="line">                    dp[j] = dp[j] + dp[j - coins[i]];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[amount];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode Dynamic Programing DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 322 - Coin Change</title>
+      <link href="/11/02/2019/322/"/>
+      <url>/11/02/2019/322/</url>
+      
+        <content type="html"><![CDATA[<p>The difference between this question and the one can be solved with greedy is that this in this question, the denominations of the coins are decided by the input arr.<br>If you are given an arr of denomination with <code>1</code> in it,<br>you can just use greedy to solve the problem in <code>linear time</code>.</p><p>ex: coins = [1,2,5] amount = 11<br> 5 + 5 + 1</p><p>but if the input has no 1 in it, you will have to use DP<br>and the time complexity will be <code>O(n * amount)</code></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">coinChange</span><span class="params">(<span class="keyword">int</span>[] coins, <span class="keyword">int</span> amount)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//time O(n * amount) space O(amount)</span></span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[amount + <span class="number">1</span>];</span><br><span class="line">        Arrays.fill(dp, amount + <span class="number">1</span>);</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;<span class="comment">//no way to make 0 amount</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= amount; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; coins.length; j++) &#123;</span><br><span class="line">                <span class="comment">//don't use cur or use cur</span></span><br><span class="line">                <span class="keyword">if</span> (coins[j] &lt;= i) &#123;</span><br><span class="line">                    dp[i] = Math.min(dp[i], dp[i - coins[j]] + <span class="number">1</span>);</span><br><span class="line">                &#125;   </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[amount] == amount + <span class="number">1</span> ?  -<span class="number">1</span> : dp[amount];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//这里之所以使用dp是因为面额是自定义的。如果使用贪心算法，有可能出现硬币凑不整的情况。比如 5，6 凑10， 贪心算法会凑不整。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode Dynamic Programing DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode 449 - Serialize and Deserialize BST</title>
       <link href="/11/02/2019/449/"/>
       <url>/11/02/2019/449/</url>
@@ -14,7 +71,7 @@
       
         <tags>
             
-            <tag> leetcode </tag>
+            <tag> leetcode Tree </tag>
             
         </tags>
       
@@ -33,7 +90,7 @@
       
         <tags>
             
-            <tag> leetcode </tag>
+            <tag> leetcode Tree </tag>
             
         </tags>
       
@@ -69,6 +126,12 @@
       
       
       
+        <tags>
+            
+            <tag> leetcode sliding window </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -84,7 +147,7 @@
       
         <tags>
             
-            <tag> leetcode </tag>
+            <tag> leetcode DFS backtracking </tag>
             
         </tags>
       
@@ -103,7 +166,7 @@
       
         <tags>
             
-            <tag> leetcode </tag>
+            <tag> leetcode DFS </tag>
             
         </tags>
       
@@ -122,7 +185,7 @@
       
         <tags>
             
-            <tag> leetcode </tag>
+            <tag> leetcode BFS </tag>
             
         </tags>
       
@@ -141,7 +204,7 @@
       
         <tags>
             
-            <tag> leetcode </tag>
+            <tag> leetcode Dijkstra Graph </tag>
             
         </tags>
       
