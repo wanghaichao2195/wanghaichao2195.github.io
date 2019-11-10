@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="The dfs return a list.We split the input s by a operator. And dfs with left part and right part, get 2 list res.Those 2 lists will be all the possible res of left and right part.Use 2 lists form a new">
+<meta name="keywords" content="leetcode DFS Divide-And-Conquer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode 241 - Different Ways to Add Parentheses">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;11&#x2F;08&#x2F;2019&#x2F;241&#x2F;index.html">
+<meta property="og:site_name" content="Haichao&#39;s Blog">
+<meta property="og:description" content="The dfs return a list.We split the input s by a operator. And dfs with left part and right part, get 2 list res.Those 2 lists will be all the possible res of left and right part.Use 2 lists form a new">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-08T21:49:18.264Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/batcat.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/batcat.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/batcat.png">
+          
+        
+    
+    <!-- title -->
+    <title>leetcode 241 - Different Ways to Add Parentheses</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/11/08/2019/456/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/11/08/2019/1216/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/11/08/2019/241/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/11/08/2019/241/&text=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/11/08/2019/241/&is_video=false&description=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=leetcode 241 - Different Ways to Add Parentheses&body=Check out this article: http://yoursite.com/11/08/2019/241/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/11/08/2019/241/&name=leetcode 241 - Different Ways to Add Parentheses&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        leetcode 241 - Different Ways to Add Parentheses
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Haichao's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-11-08T21:33:38.000Z" itemprop="datePublished">Nov,08 2019</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/leetcode-DFS-Divide-And-Conquer/" rel="tag">leetcode DFS Divide-And-Conquer</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>The dfs <code>return a list</code>.<br>We split the input s by a operator. And dfs with left part and right part, get 2 list res.<br>Those 2 lists will be all the possible res of left and right part.<br>Use 2 lists form a new return list.<br><code>Notice if there is no operator in the input str, you will have to return a list with single number in it</code>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    解题思路：</span></span><br><span class="line"><span class="comment">    使用 DFS 处理。</span></span><br><span class="line"><span class="comment">    1. 在当前层，我们遍历当前层的input string, e.g. x + y,(注意：x 和 y 可能还是复合表达式，不一定只是数字) 每遇到一个运算符后，我们就将 String 拆分成 x 和 y 然后传到下一层。（注意，当前层可能有很多个运算符，出于simplicity 我们的例子才是 x + y，有可能是 x + y * z）</span></span><br><span class="line"><span class="comment">    2. What do we expect from child nodes?</span></span><br><span class="line"><span class="comment">        孩子1 会把 x 这个复合表达式的各种可能位置加括号的运算结果封装到一个 List&lt;Integer&gt; 中返回回来；同理，孩子2 会把 y 这个复合表达式的各种可能位置加括号的运算结果封装到一个 List&lt;Integer&gt; 中返回回来</span></span><br><span class="line"><span class="comment">    3. What will we do at current node?</span></span><br><span class="line"><span class="comment">        因为我们是遇到 “+” 然后把 string 拆分成 x 和 y 的，并且孩子1返回了 x 表达式各种可能的运算结果，孩子2返回了 y 表示式各种可能的运算结果，我们需要组合相加各种 x 和 y的结果，因为当前层拆分的符号是 "+" 号。</span></span><br><span class="line"><span class="comment">    4. What will we return to the parent node？</span></span><br><span class="line"><span class="comment">        在当前层我们每组和相加一种 x 和 y 的结果，就存入 List&lt;Integer&gt; 中，最后返回的就是这个 List&lt;Integer&gt;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    e.g. </span></span><br><span class="line"><span class="comment">            2 - 1 -1 * 5</span></span><br><span class="line"><span class="comment">    / \         /   \   /      \</span></span><br><span class="line"><span class="comment">   2  1-1*5   2-1  1*5  2-1-1   5</span></span><br><span class="line"><span class="comment">    (-)          (-)         (*)    分割当前String的运算符</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    ------Time Complexity = O(n!)-------- 因为每往下一层会少一个运算符. </span></span><br><span class="line"><span class="comment">    假设第 1 层有 n 个运算符，那么第 1 层就有 2n 个分支；第 2 层有 n-1 个运算符，所以第 2 层有 2*(n-1)个分支</span></span><br><span class="line"><span class="comment">    最后一层的分支数量是 2n * 2(n-1) * ... * 2 = 2 * n! = O(n!)</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    -------Space Complexity = O(n! + n)--------- // 第二个 n 是 recursion tree's height</span></span><br><span class="line"><span class="comment">    这题和 merge sort 很像。我们可以盯着第1层看，每个运算符符拆分成的两个表达式会从子节点 return 回来结果，但是我们需要在第一层保存这些结果然后扎到另一个分支。当从倒数第二个运算符 return 回来结果后，我们需要保存前面所有的结果，which is O(n!)，然后扎到最后一个运算符的分支，所以 Space = O(n!)</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    这个 recursion tree 的 depth 应该是 O(n)，因为每一层会减少一个运算符，而运算符的数量是不会超过input string 的长度的</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    Assumption: </span></span><br><span class="line"><span class="comment">    1. No integer overflow</span></span><br><span class="line"><span class="comment">    2. No divisor</span></span><br><span class="line"><span class="comment">    3. If input is null or empty, return empty list</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// Time Complexity = O(n!) 因为每往下一层会少一个运算符. </span></span><br><span class="line"><span class="comment">// Space Complexity = O(n! + n) // 第二个 n 是 recursion tree's height</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">diffWaysToCompute</span><span class="params">(String input)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="comment">// corner case</span></span><br><span class="line">        <span class="keyword">if</span> (input == <span class="keyword">null</span> || input.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        res = findAllResults(input);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Find all possible results</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> List&lt;Integer&gt; <span class="title">findAllResults</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; curRes = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isOperator(str.charAt(i))) &#123;</span><br><span class="line">                List&lt;Integer&gt; left = findAllResults(str.substring(<span class="number">0</span>, i));</span><br><span class="line">                List&lt;Integer&gt; right = findAllResults(str.substring(i + <span class="number">1</span>));</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> l: left) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> r: right) &#123;</span><br><span class="line">                        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">if</span> (str.charAt(i) == <span class="string">'+'</span>) &#123;</span><br><span class="line">                            res = l + r;</span><br><span class="line">                        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str.charAt(i) == <span class="string">'-'</span>) &#123;</span><br><span class="line">                            res = l - r;</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            res = l * r;</span><br><span class="line">                        &#125;</span><br><span class="line">                        curRes.add(res);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// corner case: no operators, only number</span></span><br><span class="line">        <span class="keyword">if</span> (curRes.size() == <span class="number">0</span>) &#123; </span><br><span class="line">            curRes.add(Integer.valueOf(str));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> curRes;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isOperator</span><span class="params">(<span class="keyword">char</span> character)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> character == <span class="string">'+'</span> || character == <span class="string">'-'</span> || character == <span class="string">'*'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/11/08/2019/241/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/11/08/2019/241/&text=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/11/08/2019/241/&is_video=false&description=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=leetcode 241 - Different Ways to Add Parentheses&body=Check out this article: http://yoursite.com/11/08/2019/241/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/11/08/2019/241/&title=leetcode 241 - Different Ways to Add Parentheses" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/11/08/2019/241/&name=leetcode 241 - Different Ways to Add Parentheses&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Haichao Wang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-151247487-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'haichaowang';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
