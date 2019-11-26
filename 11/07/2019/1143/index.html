@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="&#x2F;&#x2F;516 1216 1143 5 those questions are also pretty alike this one. In this quetion, i means for s1, range[0, i - 1] and j means for s2, range[0, j - 1]what the Longest Common Subsequence?So dp[i][j] me">
+    <meta name="description" content="&#x2F;&#x2F;516 718 1216 1143 5 those questions are also pretty alike this one. In this quetion, i means for s1, range[0, i - 1] and j means for s2, range[0, j - 1]what the Longest Common Subsequence?So dp[i][j">
 <meta name="keywords" content="leetcode DP Dynamic Programing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode 1143 - Longest Common Subsequence">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;11&#x2F;07&#x2F;2019&#x2F;1143&#x2F;index.html">
 <meta property="og:site_name" content="Haichao&#39;s Blog">
-<meta property="og:description" content="&#x2F;&#x2F;516 1216 1143 5 those questions are also pretty alike this one. In this quetion, i means for s1, range[0, i - 1] and j means for s2, range[0, j - 1]what the Longest Common Subsequence?So dp[i][j] me">
+<meta property="og:description" content="&#x2F;&#x2F;516 718 1216 1143 5 those questions are also pretty alike this one. In this quetion, i means for s1, range[0, i - 1] and j means for s2, range[0, j - 1]what the Longest Common Subsequence?So dp[i][j">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-08T03:56:16.386Z">
+<meta property="og:updated_time" content="2019-11-25T05:07:11.765Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -147,7 +147,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>//516 1216 1143 5 those questions are also pretty alike this one.</p>
+    <p>//516 718 1216 1143 5 those questions are also pretty alike this one.</p>
 <p>In this quetion, i means for s1, range[0, i - 1] and j means for s2, range[0, j - 1]<br>what the Longest Common Subsequence?<br><code>So dp[i][j] means for first i elements in s1 and for first j elements in s2, what the LCS?</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//time O(mn) space O(mn)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestCommonSubsequence</span><span class="params">(String s1, String s2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[s1.length() + <span class="number">1</span>][s2.length() + <span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//dp[0][0], dp[0][j], dp[i][0] all = zero</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= s1.length(); ++i)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= s2.length(); ++j)&#123;</span><br><span class="line">                <span class="keyword">if</span> (s1.charAt(i - <span class="number">1</span>) == s2.charAt(j - <span class="number">1</span>)) dp[i][j] = <span class="number">1</span> + dp[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                <span class="keyword">else</span> dp[i][j] =  Math.max(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> dp[s1.length()][s2.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
