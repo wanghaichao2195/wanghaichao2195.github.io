@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="A place to thrive. Find the best solution for LC questions using SEARCH.">
-<meta name="keywords" content="leetcode Greedy Interval">
+    <meta name="description" content="12345678910111213141516171819202122class Solution &amp;#123;    &#x2F;&#x2F; https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;minimum-number-of-arrows-to-burst-balloons&#x2F;discuss&#x2F;93703&#x2F;Share-my-explained-Greedy-solution&#x2F;&#x2F;We should shoo">
+<meta name="keywords" content="leetcode Greedy Interval Sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode 452 - Minimum Number of Arrows to Burst Balloons">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;12&#x2F;01&#x2F;2019&#x2F;452&#x2F;index.html">
 <meta property="og:site_name" content="Haichao&#39;s Blog">
-<meta property="og:description" content="A place to thrive. Find the best solution for LC questions using SEARCH.">
+<meta property="og:description" content="12345678910111213141516171819202122class Solution &amp;#123;    &#x2F;&#x2F; https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;minimum-number-of-arrows-to-burst-balloons&#x2F;discuss&#x2F;93703&#x2F;Share-my-explained-Greedy-solution&#x2F;&#x2F;We should shoo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-01T06:00:18.522Z">
+<meta property="og:updated_time" content="2019-12-09T21:49:18.952Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -138,7 +138,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/leetcode-Greedy-Interval/" rel="tag">leetcode Greedy Interval</a>
+        <a class="tag-link" href="/tags/leetcode-Greedy-Interval-Sort/" rel="tag">leetcode Greedy Interval Sort</a>
     </div>
 
 
@@ -147,7 +147,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/discuss/93703/Share-my-explained-Greedy-solution</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//We should shoot as to the right as possible, because since balloons are sorted, this gives you the best chance to take down more balloons. Therefore the position should always be balloon[i][1] for the ith balloon.</span></span><br><span class="line">    <span class="comment">//O(nlogn) time O(1) sapce</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMinArrowShots</span><span class="params">(<span class="keyword">int</span>[][] points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (points.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(points, (a, b) -&gt; a[<span class="number">1</span>] - b[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span> arrowPos = points[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> arrowCnt = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; points.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arrowPos &gt;= points[i][<span class="number">0</span>]) &#123;<span class="comment">//A balloon with Xstart and Xend bursts by an arrow shot at x if Xstart ≤ x ≤ Xend. </span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            arrowCnt++;</span><br><span class="line">            arrowPos = points[i][<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arrowCnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
 </article>
 
