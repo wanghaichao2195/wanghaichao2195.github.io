@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374class Solution &amp;#123;    &#x2F;&#x2F;Time O(N)  take O(L) to insert a n">
+<meta name="keywords" content="leetcode BitManipulation Trie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode 421 - Maximum XOR of Two Numbers in an Array">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;12&#x2F;28&#x2F;2019&#x2F;421&#x2F;index.html">
+<meta property="og:site_name" content="Haichao&#39;s Blog">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374class Solution &amp;#123;    &#x2F;&#x2F;Time O(N)  take O(L) to insert a n">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-28T23:14:52.075Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/batcat.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/batcat.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/batcat.png">
+          
+        
+    
+    <!-- title -->
+    <title>leetcode 421 - Maximum XOR of Two Numbers in an Array</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/12/28/2019/720/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/12/28/2019/421/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/12/28/2019/421/&text=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/12/28/2019/421/&is_video=false&description=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=leetcode 421 - Maximum XOR of Two Numbers in an Array&body=Check out this article: http://yoursite.com/12/28/2019/421/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/12/28/2019/421/&name=leetcode 421 - Maximum XOR of Two Numbers in an Array&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        leetcode 421 - Maximum XOR of Two Numbers in an Array
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Haichao's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-12-28T21:54:28.000Z" itemprop="datePublished">Dec,28 2019</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/leetcode-BitManipulation-Trie/" rel="tag">leetcode BitManipulation Trie</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//Time O(N)  take O(L) to insert a number in Trie, since it's 32 bits we can considered it as a constant here </span></span><br><span class="line">    <span class="comment">// (L is defined by the largest number in the arr)</span></span><br><span class="line">    <span class="comment">//Space O(1)    O(2^L) = O(M) space to keep Trie, L is a constant </span></span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        TrieNode zero;</span><br><span class="line">        TrieNode one;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMaximumXOR</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		TrieNode root = <span class="keyword">new</span> TrieNode();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 建树</span></span><br><span class="line">		<span class="comment">// 每一个数字循环32次，反正输入没有负数</span></span><br><span class="line">		<span class="comment">// 从最高位开始处理 （之所以从最高位开始是为了保证结果尽可能大，位越高优先级越大，所以在找最大值的时候可以无脑选相异的路径，保证结果是最大的）</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i : nums) &#123;</span><br><span class="line">			TrieNode node = root;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">31</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">				<span class="keyword">int</span> bit = (i &gt;&gt; j) &amp; <span class="number">1</span>; <span class="comment">//&gt;&gt;有符号位移，&gt;&gt;&gt;无符号位移，区别是数字是负数的时候，空缺位补1(&gt;&gt;)和补0(&gt;&gt;&gt;), 当位移正数的时候没区别</span></span><br><span class="line">				<span class="keyword">if</span> (bit == <span class="number">1</span>) &#123;</span><br><span class="line">					<span class="keyword">if</span> (node.one == <span class="keyword">null</span>) &#123;<span class="comment">// one的位置是null，就新建</span></span><br><span class="line">						node.one = <span class="keyword">new</span> TrieNode();</span><br><span class="line">					&#125;</span><br><span class="line">					node = node.one;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">if</span> (node.zero == <span class="keyword">null</span>) &#123;</span><br><span class="line">						node.zero = <span class="keyword">new</span> TrieNode();</span><br><span class="line">					&#125;</span><br><span class="line">					node = node.zero;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//找每一个数字和别的数字异或出来的最大值！</span></span><br><span class="line">		<span class="comment">//所有最大值，取其中最大的</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i : nums) &#123;</span><br><span class="line">			TrieNode node = root;</span><br><span class="line">			<span class="keyword">int</span> XOR = <span class="number">0</span>;<span class="comment">// 异或结果,的累加。按位累加：0101 + 0010 = 0111</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">31</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">				<span class="keyword">int</span> bit = (i &gt;&gt; j) &amp; <span class="number">1</span>;</span><br><span class="line">				<span class="comment">//如果这一位是1，为了异或最大，最好使用0，这样异或出来是1</span></span><br><span class="line">				<span class="comment">//如果0不存在就只能使用1，这样这一位异或出来就是0</span></span><br><span class="line">				<span class="comment">//如果这一位是0，为了异或最大，最好使用1，这样异或出来是1</span></span><br><span class="line">				<span class="comment">//如果1不存在就只能使用0，这样这一位异或出来就是0</span></span><br><span class="line">				<span class="keyword">if</span> (bit == <span class="number">1</span>) &#123;</span><br><span class="line">					<span class="keyword">if</span> (node.zero != <span class="keyword">null</span>) &#123;</span><br><span class="line">						node = node.zero;</span><br><span class="line">						XOR += <span class="number">1</span> &lt;&lt; j;</span><br><span class="line">					&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">						node = node.one;</span><br><span class="line">						<span class="comment">//XOR += 0 &lt;&lt; j;// 0没用为了明确还是写上</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">if</span> (node.one != <span class="keyword">null</span>) &#123;</span><br><span class="line">						node = node.one;</span><br><span class="line">						XOR += <span class="number">1</span> &lt;&lt; j;</span><br><span class="line">					&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">						node = node.zero;</span><br><span class="line">						<span class="comment">//XOR += 0 &lt;&lt; j;</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			max = Math.max(max, XOR);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> max;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/12/28/2019/421/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/12/28/2019/421/&text=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/12/28/2019/421/&is_video=false&description=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=leetcode 421 - Maximum XOR of Two Numbers in an Array&body=Check out this article: http://yoursite.com/12/28/2019/421/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/12/28/2019/421/&title=leetcode 421 - Maximum XOR of Two Numbers in an Array" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/12/28/2019/421/&name=leetcode 421 - Maximum XOR of Two Numbers in an Array&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Haichao Wang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-151247487-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'haichaowang';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
