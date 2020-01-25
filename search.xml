@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title>adjacent</title>
+      <link href="/01/24/2020/adjacent/"/>
+      <url>/01/24/2020/adjacent/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 152 - Maximum Product Subarray</title>
+      <link href="/01/24/2020/152/"/>
+      <url>/01/24/2020/152/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// int maxProduct(int A[], int n) &#123;</span></span><br><span class="line"><span class="comment">//     //kadane's algorithm</span></span><br><span class="line"><span class="comment">//         if (n == 0) return 0;</span></span><br><span class="line"><span class="comment">//         int maxProduct = A[0];</span></span><br><span class="line"><span class="comment">//         int minProduct = A[0];</span></span><br><span class="line"><span class="comment">//         int maxRes = A[0];</span></span><br><span class="line"><span class="comment">//         for (int i = 1; i &lt; n; i++)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line"><span class="comment">//             if (A[i] &gt;= 0)</span></span><br><span class="line"><span class="comment">//             &#123;</span></span><br><span class="line"><span class="comment">//                 maxProduct = max(maxProduct * A[i], A[i]);</span></span><br><span class="line"><span class="comment">//                 minProduct = min(minProduct * A[i], A[i]);</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//             else</span></span><br><span class="line"><span class="comment">//             &#123;</span></span><br><span class="line"><span class="comment">//                 int temp = maxProduct;</span></span><br><span class="line"><span class="comment">//                 maxProduct = max(minProduct * A[i], A[i]);</span></span><br><span class="line"><span class="comment">//                 minProduct = min(temp * A[i], A[i]);</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//             maxRes = max(maxRes, maxProduct);</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line"><span class="comment">//         return maxRes;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//O(n) time O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxherepre = A[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> minherepre = A[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxsofar = A[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxhere, minhere;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.length; i++) &#123;</span><br><span class="line">            maxhere = Math.max(Math.max(maxherepre * A[i], minherepre * A[i]), A[i]);</span><br><span class="line">            minhere = Math.min(Math.min(maxherepre * A[i], minherepre * A[i]), A[i]);</span><br><span class="line">            maxsofar = Math.max(maxhere, maxsofar);</span><br><span class="line">            maxherepre = maxhere;</span><br><span class="line">            minherepre = minhere;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxsofar;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode array DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 53 - Maximum Subarray</title>
+      <link href="/01/24/2020/53/"/>
+      <url>/01/24/2020/53/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//O(n) time O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxSoFar = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> maxEndHere = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="comment">//we must choose the cur one, otherwise the subarray with break</span></span><br><span class="line">            maxEndHere = Math.max(maxEndHere + nums[i], nums[i]);</span><br><span class="line">            maxSoFar =  Math.max(maxSoFar, maxEndHere);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// if(maxEndHere  &gt; 0 )&#123;</span></span><br><span class="line">            <span class="comment">//     maxEndHere += nums[i];</span></span><br><span class="line">            <span class="comment">// &#125; else &#123;</span></span><br><span class="line">            <span class="comment">//     maxEndHere = nums[i];</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// maxSoFar = Math.max(maxSoFar, maxEndHere);</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> maxSoFar;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode array DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode 1290 - Convert Binary Number in a Linked List to Integer</title>
       <link href="/01/22/2020/1290/"/>
       <url>/01/22/2020/1290/</url>
