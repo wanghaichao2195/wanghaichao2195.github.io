@@ -4,6 +4,114 @@
   
     
     <entry>
+      <title>leetcode 263 - Ugly Number</title>
+      <link href="/02/09/2020/263/"/>
+      <url>/02/09/2020/263/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//time O(num)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isUgly</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (num != <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num % <span class="number">2</span> == <span class="number">0</span>) num /= <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (num % <span class="number">3</span> == <span class="number">0</span>) num /= <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (num % <span class="number">5</span> == <span class="number">0</span>) num /= <span class="number">5</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode Math </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 45 - Jump Game II</title>
+      <link href="/02/08/2020/45/"/>
+      <url>/02/08/2020/45/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//O(n) greedy</span></span><br><span class="line">    <span class="comment">//(you can assume that you can always reach the last index.) so no [0,3,1,1,4] case</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">jump</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> jump = <span class="number">0</span>, curFurthest = <span class="number">0</span>, curEnd = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123;<span class="comment">//here we do not include the last element</span></span><br><span class="line">            curFurthest = Math.max(nums[i] + i, curFurthest);</span><br><span class="line">            <span class="keyword">if</span> (i == curEnd) &#123;</span><br><span class="line">                jump++;</span><br><span class="line">                curEnd = curFurthest;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> jump;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode Array Greedy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 55 - Jump Game</title>
+      <link href="/02/08/2020/55/"/>
+      <url>/02/08/2020/55/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canJump</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line"><span class="comment">//     backtracking 2^n time    O(n) space</span></span><br><span class="line"><span class="comment">//         return canJumpFrom(0, nums);</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//     public boolean canJumpFrom(int pos, int[] nums) &#123;</span></span><br><span class="line"><span class="comment">//         if (pos == nums.length - 1) &#123;</span></span><br><span class="line"><span class="comment">//             return true;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         int furthestJump = Math.min(pos + nums[pos], nums.length - 1);</span></span><br><span class="line"><span class="comment">//         for (int i = pos + 1; i &lt;= furthestJump; i++) &#123;</span></span><br><span class="line"><span class="comment">//             if (canJumpFrom(i, nums)) &#123;</span></span><br><span class="line"><span class="comment">//                 return true;</span></span><br><span class="line"><span class="comment">//             &#125;</span></span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//         return false;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="comment">//Iterating right-to-left, for each position we check if there is a potential jump that reaches a GOOD index (currPosition + nums[currPosition] &gt;= leftmostGoodIndex). If we can reach a GOOD index, then our position is itself GOOD. Also, this new GOOD position will be the new leftmost GOOD index. Iteration continues until the beginning of the array. If first position is a GOOD index then we can reach the last index from the first position.</span></span><br><span class="line">        <span class="comment">//greedy</span></span><br><span class="line">        <span class="comment">// O(n) time</span></span><br><span class="line">        <span class="keyword">int</span> leftMostGoodIndex = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] + i &gt;= leftMostGoodIndex) &#123;</span><br><span class="line">                leftMostGoodIndex = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> leftMostGoodIndex == <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode Greedy Array </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hooks_digest</title>
+      <link href="/02/07/2020/hooks-digest/"/>
+      <url>/02/07/2020/hooks-digest/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// useCallback和改变参数重新请求新的数据</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    count: <span class="number">0</span>,</span><br><span class="line">    step: <span class="number">0</span></span><br><span class="line">  &#125;;</span><br><span class="line">  fetchData = () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> url =</span><br><span class="line">      <span class="string">"https://v?query="</span> + <span class="keyword">this</span>.state.count + <span class="string">"&amp;step="</span> + <span class="keyword">this</span>.state.step;</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;Child fetchData=&#123;<span class="keyword">this</span>.fetchData&#125; count=&#123;count&#125; step=&#123;step&#125; /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    data: <span class="keyword">null</span></span><br><span class="line">  &#125;;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.props.fetchData();</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidUpdate(prevProps) &#123;</span><br><span class="line">    <span class="keyword">if</span> (</span><br><span class="line">      <span class="keyword">this</span>.props.count !== prevProps.count &amp;&amp;</span><br><span class="line">      <span class="keyword">this</span>.props.step !== prevProps.step</span><br><span class="line">    ) &#123;</span><br><span class="line">      <span class="keyword">this</span>.props.fetchData();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">function <span class="title">Parent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [ count, setCount ] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> [ step, setStep ] = useState(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> fetchData = useCallback(() =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">'https://v/search?query='</span> + count + <span class="string">"&amp;step="</span> + step;</span><br><span class="line">  &#125;, [count, step])</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Child fetchData=&#123;fetchData&#125; /&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">function <span class="title">Child</span><span class="params">(props)</span> </span>&#123;</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    props.fetchData()</span><br><span class="line">  &#125;, [props.fetchData])</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 815 - Bus Routes</title>
+      <link href="/02/05/2020/815/"/>
+      <url>/02/05/2020/815/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode BFS Graph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>leetcode 6 - ZigZag Conversion</title>
+      <link href="/02/05/2020/6/"/>
+      <url>/02/05/2020/6/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//O(n) time</span></span><br><span class="line">    <span class="comment">//O(n)      O(1) space if return string is not considered extra space.</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">convert</span><span class="params">(String s, <span class="keyword">int</span> nRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] c = s.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> len = c.length;</span><br><span class="line">        <span class="comment">//StringBuffer slow thread safe</span></span><br><span class="line">        <span class="comment">//StringBuilder single-threaded faster</span></span><br><span class="line">        StringBuilder[] sb = <span class="keyword">new</span> StringBuilder[nRows];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nRows; i++) sb[i] = <span class="keyword">new</span> StringBuilder();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; len) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> idx = <span class="number">0</span>; idx &lt; nRows &amp;&amp; i &lt; len; idx++) <span class="comment">// vertically down</span></span><br><span class="line">                sb[idx].append(c[i++]);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> idx = nRows-<span class="number">2</span>; idx &gt;= <span class="number">1</span> &amp;&amp; i &lt; len; idx--) <span class="comment">// obliquely up</span></span><br><span class="line">                sb[idx].append(c[i++]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> idx = <span class="number">1</span>; idx &lt; nRows; idx++)</span><br><span class="line">            sb[<span class="number">0</span>].append(sb[idx]);</span><br><span class="line">        <span class="keyword">return</span> sb[<span class="number">0</span>].toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> leetcode String </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode 230 - Kth Largest Element in an Array</title>
       <link href="/02/05/2020/215/"/>
       <url>/02/05/2020/215/</url>
