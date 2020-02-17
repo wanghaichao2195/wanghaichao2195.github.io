@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445class Solution &amp;#123;    public boolean validTicTacToe(String[] board) &amp;#123;        &#x2F;&#x2F;Time and Space Complexity: O(1)">
+<meta name="keywords" content="leetcode Math">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode 794 - Valid Tic-Tac-Toe State">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;02&#x2F;17&#x2F;2020&#x2F;794&#x2F;index.html">
+<meta property="og:site_name" content="Haichao&#39;s Blog">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445class Solution &amp;#123;    public boolean validTicTacToe(String[] board) &amp;#123;        &#x2F;&#x2F;Time and Space Complexity: O(1)">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-17T08:25:01.409Z">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/batcat.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/batcat.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/batcat.png">
+          
+        
+    
+    <!-- title -->
+    <title>leetcode 794 - Valid Tic-Tac-Toe State</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/02/17/2020/384/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/02/16/2020/221/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/02/17/2020/794/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/02/17/2020/794/&text=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/02/17/2020/794/&is_video=false&description=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=leetcode 794 - Valid Tic-Tac-Toe State&body=Check out this article: http://yoursite.com/02/17/2020/794/" target="_blank" rel="noopener"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/02/17/2020/794/&name=leetcode 794 - Valid Tic-Tac-Toe State&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        leetcode 794 - Valid Tic-Tac-Toe State
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Haichao's Blog</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-17T08:23:55.000Z" itemprop="datePublished">Feb,17 2020</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/leetcode-Math/" rel="tag">leetcode Math</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validTicTacToe</span><span class="params">(String[] board)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//Time and Space Complexity: O(1) O(1).</span></span><br><span class="line">        <span class="keyword">int</span> xCount = <span class="number">0</span>, oCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (String row: board)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">char</span> c: row.toCharArray()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (c == <span class="string">'X'</span>) xCount++;</span><br><span class="line">                <span class="keyword">if</span> (c == <span class="string">'O'</span>) oCount++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (oCount != xCount &amp;&amp; oCount != xCount - <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (win(board, <span class="string">'X'</span>) &amp;&amp; oCount != xCount - <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (win(board, <span class="string">'O'</span>) &amp;&amp; oCount != xCount) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">win</span><span class="params">(String[] B, <span class="keyword">char</span> P)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// // B: board, P: player</span></span><br><span class="line">        <span class="comment">// for (int i = 0; i &lt; 3; ++i) &#123;</span></span><br><span class="line">        <span class="comment">//     //col</span></span><br><span class="line">        <span class="comment">//     if (P == B[0].charAt(i) &amp;&amp; P == B[1].charAt(i) &amp;&amp; P == B[2].charAt(i))</span></span><br><span class="line">        <span class="comment">//         return true;</span></span><br><span class="line">        <span class="comment">//     //row</span></span><br><span class="line">        <span class="comment">//     if (P == B[i].charAt(0) &amp;&amp; P == B[i].charAt(1) &amp;&amp; P == B[i].charAt(2))</span></span><br><span class="line">        <span class="comment">//         return true;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="comment">// if (P == B[0].charAt(0) &amp;&amp; P == B[1].charAt(1) &amp;&amp; P == B[2].charAt(2))</span></span><br><span class="line">        <span class="comment">//     return true;</span></span><br><span class="line">        <span class="comment">// if (P == B[0].charAt(2) &amp;&amp; P == B[1].charAt(1) &amp;&amp; P == B[2].charAt(0))</span></span><br><span class="line">        <span class="comment">//     return true;</span></span><br><span class="line">        <span class="comment">// return false;</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[][] lines = <span class="keyword">new</span> <span class="keyword">int</span>[][] &#123;&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>&#125;,&#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;,&#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>&#125;,</span><br><span class="line">                                     &#123;<span class="number">0</span>, <span class="number">3</span>, <span class="number">6</span>&#125;,</span><br><span class="line">                                     &#123;<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>&#125;,</span><br><span class="line">                                     &#123;<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>&#125;,</span><br><span class="line">                                     &#123;<span class="number">0</span>, <span class="number">4</span>, <span class="number">8</span>&#125;,</span><br><span class="line">                                     &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>&#125;&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] line: lines) &#123;</span><br><span class="line">            <span class="keyword">if</span> (B[line[<span class="number">0</span>] / <span class="number">3</span>].charAt(line[<span class="number">0</span>] % <span class="number">3</span>) == B[line[<span class="number">1</span>] / <span class="number">3</span>].charAt(line[<span class="number">1</span>] % <span class="number">3</span>) </span><br><span class="line">                &amp;&amp; B[line[<span class="number">1</span>] / <span class="number">3</span>].charAt(line[<span class="number">1</span>] % <span class="number">3</span>) == B[line[<span class="number">2</span>] / <span class="number">3</span>].charAt(line[<span class="number">2</span>] % <span class="number">3</span>) &amp;&amp; B[line[<span class="number">2</span>] / <span class="number">3</span>].charAt(line[<span class="number">2</span>] % <span class="number">3</span>) == P) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/02/17/2020/794/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/02/17/2020/794/&text=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/02/17/2020/794/&is_video=false&description=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=leetcode 794 - Valid Tic-Tac-Toe State&body=Check out this article: http://yoursite.com/02/17/2020/794/" target="_blank" rel="noopener"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/02/17/2020/794/&title=leetcode 794 - Valid Tic-Tac-Toe State" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/02/17/2020/794/&name=leetcode 794 - Valid Tic-Tac-Toe State&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Haichao Wang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">All Posts</a></li>
+         
+          <li><a href="https://github.com/wanghaichao2195" target="_blank" rel="noopener">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-151247487-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'haichaowang';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
