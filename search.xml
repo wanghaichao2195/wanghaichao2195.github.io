@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>leetcode 240 - Search a 2D Matrix II</title>
+      <link href="/06/25/2020/1051/"/>
+      <url>/06/25/2020/1051/</url>
+      
+        <content type="html"><![CDATA[<p>Basic idea: </p><ul><li>The res will be the diff digits comparing the sorted arr with original arr.</li></ul><p>ex:     115432</p><p>sorted: 112345</p><p>res(diff digits) = 4</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">//time O(n)</span></span><br><span class="line">    <span class="comment">//space O(1)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">heightChecker</span><span class="params">(<span class="keyword">int</span>[] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] heightToFreq = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">101</span>]; <span class="comment">// height range [1, 100] </span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> height : heights) &#123;</span><br><span class="line">            heightToFreq[height]++; <span class="comment">// index: height, val:frequency</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> curHeight = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; heights.length; i++) &#123;</span><br><span class="line">            <span class="comment">// find the first occurrence of smallest height</span></span><br><span class="line">            <span class="keyword">while</span> (heightToFreq[curHeight] == <span class="number">0</span>) &#123; </span><br><span class="line">                curHeight++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (curHeight != heights[i]) &#123;</span><br><span class="line">                result++;</span><br><span class="line">            &#125;</span><br><span class="line">            heightToFreq[curHeight]--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Sort Counting Sort </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leetcode 348 - Design Tic-Tac-Toe</title>
       <link href="/02/17/2020/348/"/>
       <url>/02/17/2020/348/</url>
